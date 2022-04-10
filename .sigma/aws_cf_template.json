@@ -78,12 +78,6 @@
         "AutoDeploy": true
       }
     },
-    "s3testBucket": {
-      "Type": "AWS::S3::Bucket",
-      "Properties": {
-        "BucketName": "test-bucket"
-      }
-    },
     "ServerlessFileUploader": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -141,24 +135,7 @@
               }
             }
           ]
-        },
-        "Policies": [
-          {
-            "PolicyName": "ServerlessFileUploaderPolicy",
-            "PolicyDocument": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "s3:PutObject"
-                  ],
-                  "Resource": "arn:aws:s3:::test-bucket/*"
-                }
-              ]
-            }
-          }
-        ]
+        }
       }
     },
     "httpApigFileUploaderAPIIntegrationServerlessFileUploader": {

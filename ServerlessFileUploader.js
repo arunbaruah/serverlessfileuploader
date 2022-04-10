@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     // Upload the file to S3
     try {
         let data = await s3.putObject({
-            Bucket: "test-bucket",
+            Bucket: "test-bucket-arun",
             Key: fullFileName,
             Body: fileContent,
             Metadata: {}
